@@ -20,7 +20,7 @@ a {
 }
 
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .main-slider-carousel .inner-box {
     padding-top: 80px;
   }
@@ -43,6 +43,6 @@ a {
 
 @media (max-width: 768px) {
   .main-slider-carousel .swiper-slide {
-    height: 200px; /* Set the height for phone view */
+    height: 200px; 
   }
-}
+} */
