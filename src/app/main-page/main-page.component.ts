@@ -51,7 +51,7 @@ export class MainPageComponent implements AfterViewInit , OnInit {
     await this.loadScript('assets/js/wow.js');
     await this.loadScript('assets/js/parallax.min.js');
     await this.loadScript('assets/js/tilt.jquery.min.js');
-    // await this.loadScript('assets/js/swiper.min.js');
+    await this.loadScript('assets/js/swiper.min.js');
     await this.loadScript('assets/js/validate.js');
     await this.loadScript('assets/js/jquery-ui.js');
     await this.loadScript('assets/js/script.js');    
