@@ -2,9 +2,6 @@ a {
     text-decoration: none !important;
 }    
 
-
-
-
 .scrollable {
   max-height: 600px; /* Adjust the max-height as needed to limit the scrollable area */
   overflow-y: auto;
@@ -20,7 +17,7 @@ a {
 }
 
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .main-slider-carousel .inner-box {
     padding-top: 80px;
   }
@@ -45,4 +42,4 @@ a {
   .main-slider-carousel .swiper-slide {
     height: 300px; 
   }
-}
+} */
