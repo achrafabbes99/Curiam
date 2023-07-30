@@ -1,0 +1,15 @@
+a {
+    text-decoration: none !important;
+}    
+
+
+
+
+.scrollable {
+  max-height: 600px; /* Adjust the max-height as needed to limit the scrollable area */
+  overflow-y: auto;
+}
+
+.logo {
+  transform: scale(0.89);
+}
