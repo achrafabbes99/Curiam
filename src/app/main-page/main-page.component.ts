@@ -55,7 +55,7 @@ export class MainPageComponent implements AfterViewInit , OnInit {
     await this.loadScript('assets/js/validate.js');
     await this.loadScript('assets/js/jquery-ui.js');
     await this.loadScript('assets/js/script.js');    
-    
+    await this.loadScript('assets/js/swiper-bundle.min.js');
 
   }
 
