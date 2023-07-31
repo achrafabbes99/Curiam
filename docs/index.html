@@ -12,7 +12,7 @@
   
    <script src="./assets/js/swiper-bundle.min.js"></script>
    <!-- <script src="./assets/js/swipe.min.js"></script> -->
-  <script>
+  <!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
       if (document.querySelector('.main-slider-carousel')) {
         var swiper = new Swiper('.main-slider-carousel', {
@@ -47,6 +47,35 @@
             disableOnInteraction: false 
           },
           touch: false,
+        });
+      }
+    });
+  </script> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (document.querySelector('.main-slider-carousel')) {
+        var swiper = new Swiper('.main-slider-carousel', {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          loop: false,
+          lazyLoading: true,
+          touch: false, // Disable touch interactions
+          simulateTouch: false, // Disable mouse events like click
+          breakpoints: {
+            600: { slidesPerView: 1 },
+            800: { slidesPerView: 1 },
+            1000: { slidesPerView: 1 },
+            1100: { slidesPerView: 1 },
+            700: { slidesPerView: 1 }
+          },
+          pagination: '.swiper-pagination',
+          paginationClickable: true,
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev',
+          autoplay: {
+            delay: 5000, 
+            disableOnInteraction: false 
+          },
         });
       }
     });
