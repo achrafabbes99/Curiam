@@ -17,8 +17,8 @@
       if (document.querySelector('.main-slider-carousel')) {
         var swiper = new Swiper('.main-slider-carousel', {
           slidesPerView: 1,
-          spaceBetween: 0,
-          loop: true,
+          spaceBetween: 20,
+          loop: false,
           lazyLoading: true,
           TouchSpin:false,
           breakpoints: {
@@ -39,7 +39,7 @@
             }
           },
           pagination: '.swiper-pagination',
-          // paginationClickable: true,
+          paginationClickable: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
           autoplay: {
@@ -47,7 +47,6 @@
             disableOnInteraction: false 
           },
           touch: false,
-          paginationClickable: false,
         });
       }
     });
