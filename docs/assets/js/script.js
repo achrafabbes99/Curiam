@@ -104,41 +104,38 @@
 	// }
 	
 	  
-
-	if ($('.main-slider-carousel').length) {
-		var swiper = new Swiper('.main-slider-carousel', {
-		  slidesPerView: 1,
-		  spaceBetween: 0,
-		  loop: true,
-		  lazyLoading: true,
-		  TouchSpin: true,
-		  breakpoints: {
-			600: {
-			  slidesPerView: 1
-			},
-			800: {
-			  slidesPerView: 1
-			},
-			1000: {
-			  slidesPerView: 1
-			},
-			1100: {
-			  slidesPerView: 1
-			},
-			700: {
-			  slidesPerView: 1
-			}
+	var swiper = new Swiper('.main-slider-carousel', {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		loop: true,
+		lazyLoading: true,
+		touch: true, // Use "touch" instead of "TouchSpin"
+		breakpoints: {
+		  600: {
+			slidesPerView: 1
 		  },
-		  pagination: '.swiper-pagination',
-		  paginationClickable: true,
-		  nextButton: '.swiper-button-next',
-		  prevButton: '.swiper-button-prev',
-		  autoplay: {
-			delay: 5000,
-			disableOnInteraction: true
+		  800: {
+			slidesPerView: 1
 		  },
-		});
-	  }
+		  1000: {
+			slidesPerView: 1
+		  },
+		  1100: {
+			slidesPerView: 1
+		  },
+		  700: {
+			slidesPerView: 1
+		  }
+		},
+		pagination: '.swiper-pagination',
+		paginationClickable: true,
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+		autoplay: {
+		  delay: 5000,
+		  disableOnInteraction: true
+		},
+	  });
 
 	  
 	
