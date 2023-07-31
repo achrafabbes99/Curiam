@@ -96,6 +96,10 @@
 	// 		paginationClickable: true,
     //         nextButton: '.swiper-button-next',
     //         prevButton: '.swiper-button-prev',
+	// 		autoplay: {
+	// 			delay: 5000, 
+	// 			disableOnInteraction: false 
+	// 		  },
     //     });
 	// }
 	
