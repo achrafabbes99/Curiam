@@ -1,11 +1,14 @@
 
-import { Component, ViewEncapsulation, AfterViewInit, Renderer2 ,OnInit} from '@angular/core';
+import { Component, ViewEncapsulation, AfterViewInit, Renderer2 ,OnInit, ViewChild, ElementRef} from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ViewportScroller } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { AbstractControl, ValidatorFn } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-main-page',
@@ -19,6 +22,28 @@ import Swal from 'sweetalert2';
 })
 export class MainPageComponent implements AfterViewInit , OnInit {
   
+  @ViewChild('modalContent', { static: false }) modalContent!: ElementRef<HTMLDivElement>;
+
+
+downloadAsPDF() {
+  if (this.modalContent) {
+    const modalElement = this.modalContent.nativeElement;
+    const modalText = modalElement.innerText;
+    const pdf = new jsPDF();
+    pdf.setFont('Arial');
+    pdf.setFontSize(18);
+    pdf.text('Conditions d\'utilisation | Curiam', 10, 10);
+    pdf.setFontSize(12);
+    pdf.text('', 10, 20);
+    pdf.setFontSize(12);
+    const lines = pdf.splitTextToSize(modalText, pdf.internal.pageSize.getWidth() - 20);
+    pdf.text(lines, 10, 30); 
+    pdf.save('conditions_utilisation.pdf');
+  }
+}
+
+
+
   protected aFormGroup: FormGroup = this.formBuilder.group({
     recaptcha: ['', [Validators.required , this.recaptchaValidator()]],
     Telephone: ['', Validators.required],
@@ -31,7 +56,8 @@ export class MainPageComponent implements AfterViewInit , OnInit {
   constructor(private renderer: Renderer2, 
     private titleService: Title,
     private viewportScroller: ViewportScroller,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private router: Router) { }
 
 
   ngOnInit(): void {
@@ -111,6 +137,14 @@ export class MainPageComponent implements AfterViewInit , OnInit {
       const isValid = recaptchaValue && recaptchaValue.length > 0; // Check if the reCAPTCHA value exists and is not empty
       return isValid ? null : { recaptchaInvalid: true };
     };
+  }
+
+  onLoginButtonClick() {
+    window.location.href = 'http://localhost:4300/auth/login';
+  }
+
+  onRegisterButtonClick() {
+    window.location.href = 'http://localhost:4300/auth/register';
   }
 }
 

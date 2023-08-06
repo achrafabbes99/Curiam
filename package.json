@@ -18,6 +18,8 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "ngx-captcha": "^13.0.0",
     "ngx-smart-modal": "^14.0.2",
     "rxjs": "~7.5.0",
